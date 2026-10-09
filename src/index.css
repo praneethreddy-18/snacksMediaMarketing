@@ -1,0 +1,160 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    scroll-behavior: smooth;
+    background-color: #040711;
+    color: #F1F5F9;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', 'Syne', 'Outfit', sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Brand Typography Utility */
+.font-display {
+  font-family: 'Syne', 'Space Grotesk', 'Outfit', sans-serif;
+}
+
+.font-grotesk {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Custom Brand Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.75;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+/* PDF Deck Pill Badges: White/Light Cyan background with dark uppercase font */
+.pill-badge-deck {
+  background: #EAF4FD;
+  color: #050B14;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 9999px;
+  box-shadow: 0 4px 14px rgba(0, 71, 255, 0.15);
+}
+
+/* PDF Deck Cards: Dark Teal/Navy background with blue/cyan border */
+.card-deck-dark {
+  background: rgba(8, 26, 38, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(20, 75, 91, 0.6);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
+}
+
+.card-deck-dark:hover {
+  border-color: rgba(0, 71, 255, 0.8);
+  box-shadow: 0 15px 35px -10px rgba(0, 71, 255, 0.35);
+}
+
+.glass-card-dark {
+  background: rgba(6, 15, 29, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 71, 255, 0.25);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
+}
+
+.glass-card-dark:hover {
+  border-color: rgba(0, 71, 255, 0.6);
+  box-shadow: 0 15px 35px -10px rgba(0, 71, 255, 0.3);
+}
+
+/* Brand Blue Radial Spot Glow */
+.bg-brand-radial-glow {
+  background: radial-gradient(circle at 50% 50%, rgba(0, 71, 255, 0.4) 0%, rgba(0, 82, 255, 0.15) 50%, transparent 80%);
+}
+
+.bg-brand-blue-spot {
+  background: radial-gradient(circle at bottom center, rgba(0, 71, 255, 0.75) 0%, rgba(0, 30, 120, 0.3) 50%, transparent 75%);
+}
+
+/* Custom Scrollbar for Brand Dark Theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #040711;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0F172A;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0047FF;
+}
+
+/* Brand Specific Text Gradients */
+.text-snackz-light {
+  color: #D9EBF7;
+}
+
+.text-snackz-yellow {
+  color: #FACC15;
+}
+
+.text-gradient-snackz {
+  background: linear-gradient(135deg, #D9EBF7 0%, #FFFFFF 60%, #FACC15 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-blue {
+  background: linear-gradient(135deg, #60A5FA 0%, #0047FF 60%, #38BDF8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
