@@ -5,7 +5,6 @@ import { MarqueeTicker } from './components/MarqueeTicker';
 
 import { Services } from './components/Services';
 import { ServiceDetailModal } from './components/ServiceDetailModal';
-import { GrowthSystem } from './components/GrowthSystem';
 import { BeforeAfterSlider } from './components/BeforeAfterSlider';
 import { CustomCursor } from './components/CustomCursor';
 import { ScrollProgress } from './components/ScrollProgress';
@@ -82,8 +81,6 @@ export function App() {
         <Services
           onOpenDetail={(service) => setSelectedService(service)}
         />
-
-        <GrowthSystem />
 
         <BeforeAfterSlider
           onConsult={handleOpenCheckout}

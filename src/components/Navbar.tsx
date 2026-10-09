@@ -29,7 +29,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         setIsScrolled(false);
       }
       
-      const sections = ['home', 'services', 'growth', 'industries', 'about', 'portfolio', 'contact'];
+      const sections = ['home', 'services', 'industries', 'about', 'portfolio', 'contact'];
       const current = sections.find(section => {
         const el = document.getElementById(section);
         if (el) {
@@ -50,7 +50,6 @@ export const Navbar: React.FC<NavbarProps> = ({
   const navLinks = [
     { name: 'Home', href: '#home', id: 'home' },
     { name: 'Services', href: '#services', id: 'services' },
-    { name: 'Growth', href: '#growth', id: 'growth' },
     { name: 'Industries', href: '#industries', id: 'industries' },
     { name: 'About', href: '#about', id: 'about' },
     { name: 'Portfolio', href: '#portfolio', id: 'portfolio' },
