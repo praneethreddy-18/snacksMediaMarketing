@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Utensils, Scissors, Dumbbell, Stethoscope, ShoppingBag, Home, Building2, Briefcase, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Utensils, Scissors, Dumbbell, Stethoscope, ShoppingBag, Home, Building2, Briefcase, ArrowRight, CheckCircle2, Palette } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { AnimatedSection } from './AnimatedSection';
 
@@ -86,6 +86,15 @@ export const IndustriesSection: React.FC<{ onSelectIndustry: () => void }> = ({ 
       description: 'Establish market dominance with polished founder video podcasts, LinkedIn content, and automated CRM lead routing.',
       keyWorkflows: ['Founder Podcast Clips', 'B2B Meta/LinkedIn Ads', 'CRM Google Sheets Setup'],
       metrics: '5.2x ROAS On Ad Spend'
+    },
+    {
+      id: 'interiordesign',
+      name: 'Interior Design',
+      icon: <Palette className="w-5 h-5" />,
+      tagline: 'Stunning Portfolio Showcases & Lead Qualification Bots',
+      description: 'Highlight your best design projects with cinematic video tours and capture high-intent client leads automatically.',
+      keyWorkflows: ['Portfolio Video Tours', 'WhatsApp Lead Bot', 'High-Ticket Client Funnel'],
+      metrics: '3.2x More Consultations'
     }
   ];
 
