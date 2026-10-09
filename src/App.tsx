@@ -9,6 +9,7 @@ import { BeforeAfterSlider } from './components/BeforeAfterSlider';
 import { CustomCursor } from './components/CustomCursor';
 import { ScrollProgress } from './components/ScrollProgress';
 import { ParticleCanvas } from './components/ParticleCanvas';
+import { AutomationSection } from './components/AutomationSection';
 import { IndustriesSection } from './components/IndustriesSection';
 import { WhyChooseUs } from './components/WhyChooseUs';
 import { AboutUs } from './components/AboutUs';
@@ -85,6 +86,8 @@ export function App() {
         <BeforeAfterSlider
           onConsult={handleOpenCheckout}
         />
+
+        <AutomationSection />
 
         <IndustriesSection
           onSelectIndustry={handleOpenCheckout}
