@@ -1,7 +1,7 @@
 import React, { useState, type MouseEvent } from 'react';
 import { SERVICES_DATA } from '../data';
 import type { ServiceItem } from '../types';
-import { Bot, PenTool, Video, TrendingUp, ArrowRight, ChevronRight } from 'lucide-react';
+import { Bot, PenTool, Video, TrendingUp, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence, useMotionValue, useMotionTemplate } from 'framer-motion';
 import { AnimatedSection, MotionGrid, MotionCard } from './AnimatedSection';
 
