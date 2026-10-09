@@ -25,7 +25,7 @@ const ReelCard = ({ color = "bg-blue-600", from = "from-blue-600/40", to = "to-c
   </div>
 );
 
-const StatCard = ({ icon: Icon, value, label, color = "text-emerald-400", bg = "bg-emerald-500" }) => (
+const StatCard = ({ icon: Icon, value, label, color = "text-emerald-400", bg = "bg-emerald-500" }: { icon: any, value: string, label: string, color?: string, bg?: string }) => (
   <div className="w-36 h-36 bg-slate-900/50 backdrop-blur-xl rounded-2xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)] flex flex-col items-center justify-center gap-3 relative overflow-hidden group">
     <div className={`absolute -bottom-10 -left-10 w-32 h-32 ${bg}/20 blur-2xl rounded-full transition-all group-hover:scale-150`} />
     <div className={`w-10 h-10 rounded-xl bg-slate-800/80 border border-white/10 flex items-center justify-center shadow-inner relative z-10`}>
