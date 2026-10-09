@@ -2,8 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Heart, MessageCircle, Share2, TrendingUp, BarChart3, Zap, ChevronLeft, ChevronRight, Volume2, VolumeX } from 'lucide-react';
 
-import homeVideo from '../assets/Home Video.mp4';
-import introVideo from '../assets/Intro Urban Space.mp4';
+const homeVideo = "https://www.w3schools.com/html/mov_bbb.mp4"; // REPLACE WITH YOUR VIDEO URL
+const introVideo = "https://www.w3schools.com/html/mov_bbb.mp4"; // REPLACE WITH YOUR VIDEO URL
 
 const REELS = [
   {

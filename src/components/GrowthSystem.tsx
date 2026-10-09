@@ -2,8 +2,8 @@ import React from 'react';
 import { AnimatedSection } from './AnimatedSection';
 import { AutomationFlowGraphic } from './AutomationFlowGraphic';
 
-import homeVideo from '../assets/Home Video.mp4';
-import introVideo from '../assets/Intro Urban Space.mp4';
+const homeVideo = "https://www.w3schools.com/html/mov_bbb.mp4"; // REPLACE WITH YOUR VIDEO URL
+const introVideo = "https://www.w3schools.com/html/mov_bbb.mp4"; // REPLACE WITH YOUR VIDEO URL
 
 export const GrowthSystem: React.FC = () => {
   return (
