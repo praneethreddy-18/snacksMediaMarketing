@@ -19,76 +19,81 @@ const ServiceCard = ({ service, onOpenDetail, getCategoryIcon }: any) => {
     <MotionCard>
       <div 
         onMouseMove={handleMouseMove}
-        className="card-deck-dark rounded-3xl p-6 sm:p-8 border border-blue-900/40 shadow-xl hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden h-full"
+        className="bg-slate-900/40 backdrop-blur-xl rounded-[2.5rem] p-8 border border-white/5 hover:border-blue-500/40 shadow-2xl hover:shadow-[0_0_50px_rgba(0,71,255,0.15)] transition-all duration-500 flex flex-col justify-between group relative overflow-hidden h-full hover:-translate-y-2"
       >
         <motion.div
-          className="pointer-events-none absolute -inset-px rounded-3xl opacity-0 transition duration-300 group-hover:opacity-100"
+          className="pointer-events-none absolute -inset-px rounded-[2.5rem] opacity-0 transition duration-500 group-hover:opacity-100"
           style={{
             background: useMotionTemplate`
               radial-gradient(
-                450px circle at ${mouseX}px ${mouseY}px,
+                600px circle at ${mouseX}px ${mouseY}px,
                 rgba(0, 71, 255, 0.15),
                 transparent 80%
               )
             `,
           }}
         />
-        {/* Card Subtle Gradient Accent */}
-        <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-blue-600/20 to-transparent rounded-bl-full pointer-events-none" />
+        {/* Dynamic Glows */}
+        <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-blue-500/20 via-cyan-400/10 to-transparent rounded-bl-full pointer-events-none transition-opacity duration-500 group-hover:opacity-100 opacity-50" />
+        <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-purple-500/20 blur-3xl rounded-full pointer-events-none group-hover:bg-blue-500/30 transition-colors duration-700" />
 
         <div className="relative z-10">
           {/* Header Badge & Icon */}
-          <div className="flex items-center justify-between gap-4 mb-6">
-            <div className="w-14 h-14 rounded-2xl bg-slate-950 border border-blue-600/50 flex items-center justify-center group-hover:bg-[#0047FF] group-hover:text-white transition-all duration-300">
+          <div className="flex items-center justify-between gap-4 mb-8">
+            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-slate-800 to-slate-950 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-gradient-to-br group-hover:from-blue-600 group-hover:to-blue-900 group-hover:border-blue-400 group-hover:shadow-[0_0_25px_rgba(0,71,255,0.5)] transition-all duration-500 relative z-20">
               {getCategoryIcon(service.iconName)}
             </div>
-            <span className="px-3.5 py-1 rounded-full bg-[#EAF4FD] text-[#040711] text-xs font-grotesk font-extrabold uppercase shadow-sm">
+            <span className="px-4 py-1.5 rounded-full bg-blue-500/10 text-cyan-400 border border-blue-500/20 text-xs font-grotesk font-extrabold uppercase tracking-wide shadow-sm group-hover:bg-cyan-400 group-hover:text-slate-900 transition-all duration-500">
               {service.badge}
             </span>
           </div>
 
           {/* Title & Description */}
-          <h3 className="font-display text-xl sm:text-2xl font-black text-white mb-3 group-hover:text-cyan-400 transition-colors uppercase">
+          <h3 className="font-display text-2xl sm:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-300 mb-4 group-hover:from-cyan-300 group-hover:to-blue-500 transition-all duration-500 uppercase tracking-tight">
             {service.title}
           </h3>
-          <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-6 font-medium">
+          <p className="text-slate-400 text-sm sm:text-base leading-relaxed mb-8 font-medium group-hover:text-slate-300 transition-colors duration-300">
             {service.description}
           </p>
 
           {/* Sub-Features Bullet List */}
-          <div className="space-y-2 mb-8">
-            <div className="text-xs font-extrabold uppercase text-white tracking-wider mb-2 font-grotesk flex items-center gap-1.5">
-              <span>Solution Highlights</span>
-              <span className="text-slate-500">⊗</span>
+          <div className="space-y-3 mb-10">
+            <div className="text-[10px] font-extrabold uppercase text-slate-500 tracking-widest mb-3 font-grotesk flex items-center gap-2">
+              <span className="w-8 h-[1px] bg-slate-700"></span>
+              <span>Included Features</span>
             </div>
             {service.subFeatures.slice(0, 4).map((feat: any, idx: number) => (
-              <div key={idx} className="pill-badge-deck py-2 px-4 text-xs font-bold shadow-xs hover:bg-white transition-colors">
-                • {feat.title}
+              <div key={idx} className="bg-slate-800/30 border border-white/5 py-3 px-4 rounded-xl text-xs font-bold shadow-sm group-hover:border-blue-500/30 group-hover:bg-blue-500/10 transition-all duration-500 text-slate-300 group-hover:text-white flex items-center gap-2 group/feat">
+                <div className="w-1.5 h-1.5 rounded-full bg-cyan-500/50 group-hover/feat:bg-cyan-400 transition-colors" />
+                {feat.title}
               </div>
             ))}
             {service.subFeatures.length > 4 && (
-              <div className="text-xs font-bold text-cyan-400 pt-1">
-                + {service.subFeatures.length - 4} more solution modules included
+              <div className="text-xs font-bold text-cyan-500/70 pt-2 group-hover:text-cyan-400 transition-colors">
+                + {service.subFeatures.length - 4} more modules included
               </div>
             )}
           </div>
         </div>
 
         {/* Action Button */}
-        <div className="pt-4 border-t border-slate-800/80 flex items-center justify-between relative z-10">
+        <div className="pt-6 border-t border-slate-800/80 flex items-center justify-between relative z-10">
           <button
             onClick={() => onOpenDetail(service)}
-            className="inline-flex items-center gap-2 text-sm font-extrabold text-white hover:text-cyan-400 group/btn cursor-pointer font-grotesk uppercase"
+            className="inline-flex items-center gap-2 text-sm font-extrabold text-slate-300 group-hover:text-white cursor-pointer font-grotesk uppercase tracking-wider transition-colors"
           >
-            <span>Explore Solution</span>
-            <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform text-cyan-400" />
+            <span className="relative">
+              Explore Solution
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-400 group-hover:w-full transition-all duration-500" />
+            </span>
+            <ChevronRight className="w-4 h-4 text-cyan-500 group-hover:translate-x-2 transition-transform duration-300" />
           </button>
 
           <button
             onClick={() => onOpenDetail(service)}
-            className="w-10 h-10 rounded-full bg-slate-900 border border-blue-900 hover:bg-[#0047FF] hover:text-white text-slate-200 flex items-center justify-center transition-colors cursor-pointer"
+            className="w-12 h-12 rounded-full bg-slate-800/50 border border-slate-700 group-hover:bg-[#0047FF] group-hover:border-[#0047FF] group-hover:text-white group-hover:shadow-[0_0_20px_rgba(0,71,255,0.4)] text-slate-400 flex items-center justify-center transition-all duration-500 cursor-pointer"
           >
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-5 h-5 group-hover:rotate-[-45deg] transition-transform duration-500" />
           </button>
         </div>
 
