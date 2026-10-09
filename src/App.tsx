@@ -12,6 +12,7 @@ import { ParticleCanvas } from './components/ParticleCanvas';
 import { AutomationSection } from './components/AutomationSection';
 import { IndustriesSection } from './components/IndustriesSection';
 import { WhyChooseUs } from './components/WhyChooseUs';
+import { AnimatedSection } from './components/AnimatedSection';
 import { AboutUs } from './components/AboutUs';
 import { TestimonialsSection } from './components/TestimonialsSection';
 import { Portfolio } from './components/Portfolio';
@@ -79,31 +80,51 @@ export function App() {
 
 
 
-        <Services
-          onOpenDetail={(service) => setSelectedService(service)}
-        />
+        <AnimatedSection direction="up">
+          <Services
+            onOpenDetail={(service) => setSelectedService(service)}
+          />
+        </AnimatedSection>
 
-        <BeforeAfterSlider
-          onConsult={handleOpenCheckout}
-        />
+        <AnimatedSection direction="up">
+          <BeforeAfterSlider
+            onConsult={handleOpenCheckout}
+          />
+        </AnimatedSection>
 
-        <AutomationSection />
+        <AnimatedSection direction="up">
+          <AutomationSection />
+        </AnimatedSection>
 
-        <IndustriesSection
-          onSelectIndustry={handleOpenCheckout}
-        />
+        <AnimatedSection direction="up">
+          <IndustriesSection
+            onSelectIndustry={handleOpenCheckout}
+          />
+        </AnimatedSection>
 
-        <WhyChooseUs />
+        <AnimatedSection direction="up">
+          <WhyChooseUs />
+        </AnimatedSection>
 
-        <AboutUs />
+        <AnimatedSection direction="up">
+          <AboutUs />
+        </AnimatedSection>
 
-        <TestimonialsSection />
+        <AnimatedSection direction="up">
+          <TestimonialsSection />
+        </AnimatedSection>
 
-        <Portfolio />
+        <AnimatedSection direction="up">
+          <Portfolio />
+        </AnimatedSection>
 
-        <FaqSection />
+        <AnimatedSection direction="up">
+          <FaqSection />
+        </AnimatedSection>
 
-        <Contact />
+        <AnimatedSection direction="up">
+          <Contact />
+        </AnimatedSection>
       </main>
 
       {/* Footer */}
