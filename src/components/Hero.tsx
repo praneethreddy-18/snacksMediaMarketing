@@ -157,8 +157,8 @@ export const Hero: React.FC<HeroProps> = ({ onGetStarted, onExploreServices }) =
                 onClick={onExploreServices}
                 className="w-full sm:w-auto px-8 py-4 bg-slate-900/90 text-slate-100 border-2 border-blue-900/60 hover:border-blue-500/60 font-bold text-base rounded-2xl shadow-lg transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer"
               >
-                <span>Explore Solutions</span>
-                <Play className="w-4 h-4 fill-slate-200 group-hover:fill-[#FACC15] group-hover:text-cyan-400 transition-colors" />
+                <span>View Our Work</span>
+                <Play className="w-4 h-4 fill-slate-200 group-hover:fill-cyan-400 group-hover:text-cyan-400 transition-colors" />
               </MagneticButton>
             </motion.div>
 

@@ -284,24 +284,56 @@ export const GROWTH_STEPS: GrowthStep[] = [
   }
 ];
 
-export const PRICING_PLAN: PricingPlan = {
-  id: 'monthly-partnership',
-  name: 'Monthly Partnership',
-  tagline: 'Premium Content & Brand Presence',
-  price: '₹40,000',
-  period: '/ month',
-  description: 'We create professional, platform-ready content using high-end cameras and quality-focused production.',
-  features: [
-    'Professional video shoots with camera & lighting setup',
-    'High-end video editing & motion graphics',
-    'Platform-ready formats (Instagram Reels, YouTube Shorts, Meta Ads)',
-    'Monthly content calendar & strategy planning',
-    'Brand consistency & visual design alignment',
-    'Instagram & WhatsApp lead automation integration',
-    'Dedicated Account Manager & 24/7 Priority Support'
-  ],
-  isPopular: true
-};
+export const PRICING_PLANS: PricingPlan[] = [
+  {
+    id: 'starter',
+    name: 'Growth Starter',
+    tagline: 'Perfect for small businesses scaling up',
+    price: '₹25,000',
+    period: '/ month',
+    description: 'A solid foundation for building your brand presence and generating steady leads.',
+    features: [
+      '12 High-Quality Reels / Month',
+      'Basic Social Media Management (Meta)',
+      '1 WhatsApp Automation Flow',
+      'Monthly Strategy Call',
+      'Basic Reporting'
+    ]
+  },
+  {
+    id: 'pro',
+    name: 'Pro Partner',
+    tagline: 'For aggressive growth & market dominance',
+    price: '₹40,000',
+    period: '/ month',
+    description: 'Complete end-to-end digital marketing suite with premium video production and full automation.',
+    features: [
+      '20 High-Quality Reels / Month',
+      'Professional Video Shoots & Editing',
+      'Full Meta Ads Management',
+      'Advanced WhatsApp & IG Automation',
+      'Brand Identity & Graphic Design',
+      'Dedicated Account Manager'
+    ],
+    isPopular: true
+  },
+  {
+    id: 'elite',
+    name: 'Elite Scale',
+    tagline: 'Full agency team at your disposal',
+    price: '₹75,000',
+    period: '/ month',
+    description: 'The ultimate enterprise package. We become your entire marketing department.',
+    features: [
+      'Unlimited Video Editing & Production',
+      'Omnichannel Ads (Meta, Google, LinkedIn)',
+      'Custom CRM Setup & Integrations',
+      'Custom Web & App Funnels',
+      'Weekly Optimization Calls',
+      'Priority 24/7 Slack Support'
+    ]
+  }
+];
 
 export const ABOUT_STATS = [
   { value: '100+', label: 'Projects Delivered', desc: 'Successful campaigns across industries' },

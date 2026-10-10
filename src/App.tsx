@@ -15,12 +15,14 @@ import { WhyChooseUs } from './components/WhyChooseUs';
 import { AnimatedSection } from './components/AnimatedSection';
 import { AboutUs } from './components/AboutUs';
 import { TestimonialsSection } from './components/TestimonialsSection';
+import { Pricing } from './components/Pricing';
 import { Portfolio } from './components/Portfolio';
 import { FaqSection } from './components/FaqSection';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { AuthModal } from './components/AuthModal';
 import { CheckoutModal } from './components/CheckoutModal';
+import { WhatsAppButton } from './components/WhatsAppButton';
 import type { ServiceItem, AuthMode } from './types';
 
 export function App() {
@@ -71,14 +73,12 @@ export function App() {
         <Hero
           onGetStarted={handleOpenCheckout}
           onExploreServices={() => {
-            const el = document.getElementById('services');
+            const el = document.getElementById('portfolio');
             el?.scrollIntoView({ behavior: 'smooth' });
           }}
         />
 
         <MarqueeTicker />
-
-
 
         <AnimatedSection direction="up">
           <Services
@@ -110,12 +110,17 @@ export function App() {
           <AboutUs />
         </AnimatedSection>
 
+        {/* Portfolio Section placed right before Reviews / Testimonials */}
+        <AnimatedSection direction="up">
+          <Portfolio />
+        </AnimatedSection>
+
         <AnimatedSection direction="up">
           <TestimonialsSection />
         </AnimatedSection>
 
         <AnimatedSection direction="up">
-          <Portfolio />
+          <Pricing onOpenCheckout={handleOpenCheckout} />
         </AnimatedSection>
 
         <AnimatedSection direction="up">
@@ -148,6 +153,7 @@ export function App() {
         onClose={() => setIsCheckoutOpen(false)}
       />
 
+      <WhatsAppButton />
     </div>
   );
 }

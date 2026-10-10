@@ -14,21 +14,55 @@ export const Contact: React.FC = () => {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.fullName || !formData.email) return;
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({
-        fullName: '',
-        email: '',
-        phone: '',
-        service: 'Business Automation',
-        message: ''
+
+    setIsSubmitting(true);
+
+    try {
+      // Replace YOUR_ACCESS_KEY_HERE with your Web3Forms access key
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: 'YOUR_ACCESS_KEY_HERE', // <-- Add your access key here
+          name: formData.fullName,
+          email: formData.email,
+          phone: formData.phone,
+          service_requested: formData.service,
+          message: formData.message,
+          subject: 'New Lead from Snackz Media Website!'
+        })
       });
-    }, 5000);
+
+      const result = await response.json();
+      if (result.success) {
+        setSubmitted(true);
+        setTimeout(() => {
+          setSubmitted(false);
+          setFormData({
+            fullName: '',
+            email: '',
+            phone: '',
+            service: 'Business Automation',
+            message: ''
+          });
+        }, 5000);
+      } else {
+        alert('Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      console.error(error);
+      alert('Network error. Please check your connection.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -243,10 +277,15 @@ export const Contact: React.FC = () => {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     type="submit"
-                    className="w-full py-4 bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-black text-base rounded-2xl shadow-xl shadow-blue-600/30 transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer"
+                    disabled={isSubmitting}
+                    className={`w-full py-4 text-white font-black text-base rounded-2xl shadow-xl transition-all duration-200 flex items-center justify-center gap-2 ${
+                      isSubmitting
+                        ? 'bg-blue-800 opacity-70 cursor-not-allowed'
+                        : 'bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 shadow-blue-600/30 cursor-pointer'
+                    }`}
                   >
-                    <span>Send Message</span>
-                    <Send className="w-5 h-5" />
+                    <span>{isSubmitting ? 'Sending Message...' : 'Send Message'}</span>
+                    {!isSubmitting && <Send className="w-5 h-5" />}
                   </motion.button>
                 </form>
               )}

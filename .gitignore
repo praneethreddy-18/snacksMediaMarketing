@@ -23,6 +23,4 @@ dist-ssr
 *.sln
 *.sw?
 
-# Media and large files
-*.mp4
 *.pdf
